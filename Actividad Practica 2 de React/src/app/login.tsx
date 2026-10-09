@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { router } from 'expo-router';
 import { useGlobalContext } from '../context/GlobalContext';
 import { Colors } from '../constants/theme';
+import { DondeEstoy } from '../components/DondeEstoy';
 
 export default function LoginScreen() {
   const [nombre, setNombre] = useState('');
@@ -18,43 +19,44 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Iniciar Sesión</Text>
-      <TextInput 
-        style={styles.input} 
-        value={nombre} 
-        onChangeText={setNombre} 
-        placeholder="Nombre de usuario" 
+      <TextInput
+        style={styles.input}
+        value={nombre}
+        onChangeText={setNombre}
+        placeholder="Nombre de usuario"
         placeholderTextColor={Colors.light.textSecondary}
       />
       <Pressable style={styles.button} onPress={handleLogin}>
-         <Text style={styles.buttonText}>Ingresar</Text>
+        <Text style={styles.buttonText}>Ingresar</Text>
       </Pressable>
+      <DondeEstoy />
     </View>
   );
 }
 
-const styles = StyleSheet.create({ 
-  container: { 
-    flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center', 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 20,
-    backgroundColor: Colors.light.background
-  }, 
-  title: { 
-    fontSize: 28, 
+    backgroundColor: Colors.light.background,
+  },
+  title: {
+    fontSize: 28,
     marginBottom: 20,
     fontWeight: 'bold',
-    color: Colors.light.primaryDark
-  }, 
-  input: { 
-    borderWidth: 1, 
+    color: Colors.light.primaryDark,
+  },
+  input: {
+    borderWidth: 1,
     borderColor: Colors.light.primary,
     backgroundColor: '#fff',
-    padding: 15, 
+    padding: 15,
     marginBottom: 20,
     width: '90%',
     borderRadius: 8,
-    fontSize: 16
+    fontSize: 16,
   },
   button: {
     backgroundColor: Colors.light.accent,
@@ -72,6 +74,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 18,
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+  },
 });

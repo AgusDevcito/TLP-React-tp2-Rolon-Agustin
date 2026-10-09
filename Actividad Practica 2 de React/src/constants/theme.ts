@@ -11,13 +11,13 @@ export const Colors = {
   light: {
     text: '#2D2D2D',
     background: '#FFFDF7',
-    backgroundElement: '#FFF3E0',
-    backgroundSelected: '#FFE0B2',
+    backgroundElement: '#FFF9C4', // Light Yellow
+    backgroundSelected: '#FFE082', // Medium Yellow
     textSecondary: '#5D4037',
-    primary: '#F57C00',
-    primaryDark: '#E65100',
-    accent: '#388E3C',
-    accentLight: '#66BB6A',
+    primary: '#FFC107', // Yellow
+    primaryDark: '#FF9800', // Orange
+    accent: '#4CAF50', // Green
+    accentLight: '#81C784', // Light Green
     buttonText: '#FFFFFF',
   },
   dark: {
@@ -26,10 +26,10 @@ export const Colors = {
     backgroundElement: '#2E2E2E',
     backgroundSelected: '#3E3E3E',
     textSecondary: '#BCAAA4',
-    primary: '#FFB74D',
-    primaryDark: '#FFA726',
-    accent: '#66BB6A',
-    accentLight: '#81C784',
+    primary: '#FFD54F', // Yellow
+    primaryDark: '#FFB74D', // Orange
+    accent: '#81C784', // Green
+    accentLight: '#A5D6A7', // Light Green
     buttonText: '#1A1A1A',
   },
 } as const;
