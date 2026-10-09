@@ -1,13 +1,17 @@
 import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
 import { useState } from 'react';
-import { router } from 'expo-router';
+import { router, Redirect } from 'expo-router';
 import { useGlobalContext } from '../context/GlobalContext';
 import { Colors } from '../constants/theme';
 import { DondeEstoy } from '../components/DondeEstoy';
 
 export default function LoginScreen() {
   const [nombre, setNombre] = useState('');
-  const { setUsuario } = useGlobalContext();
+  const { usuario, setUsuario } = useGlobalContext();
+
+  if (usuario) {
+    return <Redirect href="/cocina" />;
+  }
 
   const handleLogin = () => {
     if (nombre.trim() !== '') {
